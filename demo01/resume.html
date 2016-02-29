@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个人简历</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.2.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.min.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+   <style>
+        html,body{
+          width: 100%;
+          height: 100%;
+          box-sizing:border-box;
+        }
+      .works-img{
+        width: 100%;
+        border: solid 1px #eee;
+        cursor: pointer;
+      }
+      .works-img:hover{
+        box-shadow: 0px 0px 10px #ccc;
+      }
+      .mask{
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 10;
+        opacity: 1;
+      }
+      .mask .image-shell{
+        width: 600px;
+        height: 400px;
+        background-color: #fff;
+        margin: 0 auto;
+        margin-top: 50px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        border: solid 10px #fff;
+      }
+       .mask .image-shell span{
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        background-color: rgba(0,0,0,.5);
+        color: #fff;
+        line-height: 50px;
+        text-align: center;
+        position: absolute;
+        z-index: 30;
+        cursor: pointer;
+       }
+        .mask .image-shell a{
+          position:absolute; 
+          left:0px; 
+          bottom:0px;
+         background-color:rgba(0,0,0,0.5);
+         width:100%;
+         color:#fff;
+         padding:10px;
+         text-align:center;
+         z-index: 30;
+
+        }
+       .mask .image-shell span:hover{
+        background-color: rgba(0,0,0,.8);
+       }
+       span.left{
+        left: 0px;
+        top: 50%;
+        margin-top: -25px;
+       }
+       span.right{
+        right: 0px;
+        top: 50%;
+        margin-top: -25px;
+       }
+       span.closed{
+        width: 25px !important;
+        height: 25px !important;
+        line-height: 25px !important;
+        font-size: 16px !important;
+        right: 0px;
+        top: 0px;
+       }
+       .works-img{
+          margin-bottom:20px;
+        }
+
+       @media(max-width:992px){
+        .person-img{
+          width: 115px;
+          margin: 0 auto;
+        }
+        .title-center{
+          text-align:center;
+        }
+        .mar-top{
+          margin-top: 30px;
+        }
+        
+
+       }
+       @media(max-width:600px){
+        .mask .image-shell {
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            background-color: #fff;
+            margin: 0px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+            border: solid 10px #fff;
+            box-sizing:border-box;
+        }
+
+        .tu-shell img{
+          position: absolute;
+          top: 25%;
+          
+        }
+
+
+       }
+
+    </style>
+
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 title-center">
+        <h1>whiteblue</h1>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-7 col-xs-12">
+        <div class="row media">
+          <div class="col-md-3 text-center"><img class="media-object img-rounded person-img" width="100%" src="img/person.jpg" alt="..."></div>
+          <div class="col-md-9">
+            <h2 class="media-heading title-center">前端开发</h2>
+             目前就职于闪联电子商务有限公司！主要承担职责：一、使用HTML、CSS技术将PSD界面转化为网页文档，针对不同屏幕分辨率进行响应式布局设计；三、处理各大主流浏览器网站兼容性问题；三、使用javascript、jQuery等前端技术编写网页特效代码并进行插件封装；
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 col-xs-12 well mar-top">
+        <div class="row">
+          <div class="col-lg-6">
+            <h4><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> : 13352095963</h4>
+          </div>
+          <div class="col-lg-6">
+            <h4><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> : 867185661@qq.com</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <h4><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> : 天津市,东丽开发区</h4>
+          </div>
+          <div class="col-lg-6">
+            <h4><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> : 022-84858687</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-8 col-lg-7">
+        <h2>自我描述</h2>
+        <hr>
+        <h4><span class="label label-default">标签</span>&nbsp;&nbsp;JavaScript、HTML、CSS、jQuery、BootStrap、Zepto</h4>
+        <p><strong>前端开发者一枚！</strong></p>
+        <p>不要问我Javascript、HTML、CSS的掌握程度怎么样了？去我的 <a href="https://github.com/windform" title="windform">github</a> 社区看看吧！</p>
+        <p>当然，还是要简单描述一下自己啦：</p>
+        <ul>
+          <li>从业三年，由网页设计转型为前端开发;</li>
+          <li>作为必备技能，前端三剑客(JS、html、css)的能力是必不可少的；</li>
+          <li>学习能力彪悍：<ul>
+              <li>不会BootStrap、jQuery，就不要说自己是前端；</li>
+              <li>移动端是大势所趋！Zepto、Ionic是Web移动端的必杀技；</li>
+              <li>潮流新技术敏感，nodeJS、grunt、AngularJS、git相继涉猎、不断学习；</li>
+          </ul></li>
+          <li>不懂后台的前端不是好前端，略通php(本站就是php+wordpress建设的)</li>
+          <li>自豪的是：设计能力也不弱哦！PS、AI的掌握也很熟练哦；</li>
+        </ul>
+        <p>最后说一句：<strong style="font-size:20px;">学习力才是第一生产力</strong></p>
+</div>
+      <div class="col-sm-4 col-lg-5">
+        <h2>专业技能</h2>
+        <hr>
+        <!-- Green Progress Bar -->
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 95%"> HTML</div>
+        </div>
+        <!-- Blue Progress Bar -->
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 95%"> CSS</div>
+        </div>
+        <!-- Yellow Progress Bar -->
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> JAVASCRIPT</div>
+        </div>
+        <!-- Red Progress Bar -->
+        <div class="progress">
+          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%"> PHP</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 30%"> WORDPRESS</div>
+
+        </div>
+                <div class="progress">
+          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 90%"> PHOTOSHOP</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 85%"> ILLUSTRATOR</div>
+        </div>
+</div>
+    </div>
+    <hr>
+    <h2>工作经历</h2>
+<hr>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-md-7 col-xs-12">
+            <h4><a href="http://www.rongeasy.com" target="_blank">融e网</a></h4>
+          </div>
+<div class="col-md-5 col-xs-12">
+            <h4 class=""><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;2013.11 - 2014.11</h4>
+          </div>
+        </div>
+        <h4><span class="label label-default">网页设计</span></h4>
+        <p>天津朗悦星广告有限公司旗下所创办的融e网，是一家专门性的电子商务网站，覆盖了人们生活中重要的消费事件-房产、汽车、奢品。公司的主要业务，是为天津市内房地产、汽车、珠宝等公司提供互联网营销服务。主要工作职责如下：</p>
+        <ul>
+        	<li>使用photoshop、illustrator、fireworks等设计软件制作规范的网页界面；</li>
+        	<li>页面切图，将PSD界面图输出为html网页，并做好浏览器的兼容性处理；</li>
+        	<li>广告商用户图片的采样、收集、制作和渲染；</li>
+          <li>配合运营人员完成网站内容的编辑发布，并做好宣传推广工作。</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-md-7 col-xs-12">
+            <h4><a href="http://www.julonggangguan.com/" target="_blank">天津巨龙钢管有限公司</a></h4>
+          </div>
+          <div class="col-md-5 col-xs-12">
+            <h4 class=""><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;2015.01 - 2015.02</h4>
+          </div>
+        </div>
+        <h4><span class="label label-default">前端开发</span></h4>
+        <p>天津市巨龙钢管有限公司位于全国规模最大的钢管集散地——天津市大邱庄工业园区，专业从事各种类型的无缝钢管、镀锌钢管、不锈钢管、焊接钢管、厚壁钢管、锅炉管、大口径钢管、精密钢管、螺旋钢管等钢材产品的生产销售业务。主要工作职责如下：</p>
+        <ul>
+          <li>根据客户的需求，为客户设计出完整而有体系的钢铁产品网页模板，配合PHP编程人员完成网站后台的架构与javascript、jQuery的前端动态脚本语言的编写、嵌套；</li>
+          <li>对网站进行后期的调整处理，解决网站在不同浏览器之间的兼容性问题；</li>
+          <li>对网站的改版进行相关维护。</li>
+          <li>配合php程序员完成页面程序嵌套，并对钢材数据进行可视化渲染输出；</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-md-7 col-xs-12">
+            <h4><a href="http://www.84858687.com" target="_blank">闪联电子商务有限公司</a></h4>
+          </div>
+          <div class="col-md-5 col-xs-12">
+            <h4 class=""><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;2015.03 - 至今</h4>
+          </div>
+        </div>
+        <h4><span class="label label-default">前端开发</span></h4>
+        <p>天津闪联电子商务有限公司位于天津市东丽经济开发区五经路帝达东谷国际2号楼10楼全层，是一家以航旅业电子商务为契机，集研发、运营为一体的航旅电子商务公司。公司预打造一个集团化、综合型航旅电子商务平台。主要工作职责如下：</p>
+        <ul>
+          <li>与UI设计师沟通交流，完成PC端、移动端PSD界面的html代码输出；</li>
+          <li>解决各大浏览器之间兼容性问题，针对不同屏幕分辨率进行响应式布局设计；</li>
+          <li>根据上级领导要求，使用javascript、jQuery、zepto等技术完成网页动画特效的代码编写并封装成库；</li>
+          <li>配合.net程序员完成静态页面的程序嵌套，并使用主流的ajax技术进行数据的可视化渲染输出；</li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <h2>作品集</h2>
+    <hr>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-4 col-sm-6 col-xs-12"><img class="works-img" src="img/shanlian2.jpg" alt=""></div>
+    		<div class="col-md-4 col-sm-6 col-xs-12"><img class="works-img" src="img/shanlian1.jpg" alt=""></div>
+    		<div class="col-md-4 col-sm-6 col-xs-12"><img class="works-img" src="img/julong1.jpg" alt=""></div>
+
+    		<div class="col-md-4 col-sm-6 col-xs-12"><img class="works-img" src="img/yike.jpg" alt=""></div>
+    		<div class="col-md-4 col-sm-6 col-xs-12"><img class="works-img" src="img/ui1.jpg" alt=""></div>
+    		<div class="col-md-4 col-sm-6 col-xs-12"></div>
+
+    	</div>
+    </div>
+
+    <!-- <div class="mask"> 
+      <div class="image-shell">
+        <span class="closed glyphicon glyphicon-remove"></span>
+        <span class="left glyphicon glyphicon-menu-left"></span>
+        <span class="right glyphicon glyphicon-menu-right"></span>
+       <a href="">hello</a>
+      </div>
+    </div> -->
+
+   
+
+     
+   
+     
+
+    <hr>
+    <h2>联系我</h2>
+    <hr>
+  </div>
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-offset-3 col-xs-12 col-lg-6">
+      <div class="jumbotron">
+        <div class="row text-center">
+          <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12"> </div>
+          <div class="text-center col-lg-12"> 
+            <!-- CONTACT FORM https://github.com/jonmbake/bootstrap3-contact-form -->
+            <form role="form" id="feedbackForm" class="text-center">
+              <div class="form-group">
+                <label for="name">称呼</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="称呼">
+                <span class="help-block" style="display: none;">请输入你的称呼。</span></div>
+              <div class="form-group">
+                <label for="email">邮箱</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="邮箱">
+                <span class="help-block" style="display: none;">请输入正确的邮箱地址。</span></div>
+              <div class="form-group">
+                <label for="message">信息</label>
+                <textarea rows="10" cols="100" class="form-control" id="message" name="message" placeholder="信息"></textarea>
+                <span class="help-block" style="display: none;">请输入信息</span></div>
+              <span class="help-block" style="display: none;">Please enter a the security code.</span>
+              <button type="submit" id="feedbackSubmit" class="btn btn-primary btn-lg" style=" margin-top: 10px;">提交留言</button>
+            </form>
+            <!-- END CONTACT FORM --> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Copyright © MyWebsite. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+
+        $(function(){
+          $('.works-img').eq(0).click(function(){
+            var works1=['works1/01.jpg','works1/02.jpg','works1/03.jpg','works1/04.jpg','works1/05.jpg','works1/06.jpg','works1/07.jpg'];
+            var arr1=['http://www.84858687.com','进入网站看看']
+             slide.draw(arr1);
+             slide.image(works1);
+             slide.style();
+          })
+
+        
+          $('.works-img').eq(2).click(function(){
+            var works2=['works2/01.jpg','works2/02.jpg','works2/03.jpg','works2/04.jpg'];
+             var arr2=['http://www.julonggangguan.com','进入网站看看']
+             slide.draw(arr2);
+             slide.image(works2);
+             slide.style();
+          })
+
+          $('.works-img').eq(4).click(function(){
+            var works3=['works3/01.jpg','works3/02.jpg','works3/03.jpg','works3/04.jpg','works3/05.jpg','works3/06.jpg','works3/07.jpg','works3/08.jpg','works3/09.jpg','works3/10.jpg','works3/11.jpg','works3/12.jpg'];
+            var arr3=['http://i.ui.cn/ucenter/127820.html','进入我的UI中国社区']
+             slide.draw(arr3);
+             slide.image(works3);
+             slide.style();
+          })
+
+          $('.works-img').eq(3).click(function(){
+            var works4=['works4/01.jpg','works4/02.jpg','works4/03.jpg','works4/04.jpg','works4/05.jpg','works4/06.jpg','works4/07.jpg'];
+            var arr4=['https://github.com/windform/yike_web','该网站还未正式上线,你可以先查看我的github源码'];
+             slide.draw(arr4);
+             slide.image(works4);
+             slide.style();
+          })
+
+
+        })
+
+
+   var slide={
+            style:function(){
+                  $('body').css('overflow','hidden');
+                   $('.mask .image-shell').css({
+                        marginTop:($(window).height()-$('.mask .image-shell').height())/2
+                  });
+                   $('.tu-shell img').css({
+                       width:($('.tu-shell').width()/$('.tu-shell img').size())
+                       //width:$(window).width()
+                  });
+            },
+            draw:function(arr){
+               $('.mask').remove();
+              var mask='<div class="mask">' 
+                        +'<div class="image-shell">'
+                        +'<span class="closed glyphicon glyphicon-remove"></span>'
+                        +'<span class="left glyphicon glyphicon-menu-left"></span>'
+                        +'<span class="right glyphicon glyphicon-menu-right"></span>'
+                        +' <a href="'+arr[0]+'" target="_blank">'+arr[1]+'</a>'
+                        +'</div>'
+                      +'</div>';
+              $('body').append(mask);
+              $('.mask').animate({opacity:1},300);
+              $('.closed').click(function(){
+                  $('.mask').animate({opacity:0},300);
+                  setTimeout(function(){$('.mask').remove();$('body').css('overflow','auto')},310);
+              })
+            },
+            image:function(arr){
+              var tu='<div class="tu-shell">';
+              for(var i=0; i<arr.length;i++){
+                tu+='<img src="img/'+arr[i]+'">'
+              }
+              tu+='</div>';
+              $('.image-shell').append(tu);
+              $('.tu-shell').css({
+                  width:($('.image-shell').width()+20)*arr.length,
+                  height:400,
+                  position:'relative',
+                  zIndex:5,
+                  left:0
+                });
+               var num=0;
+              $('.right').on('click',function(){
+                if(num>=arr.length-1){
+                  num=arr.length-1;
+                }else{
+                  num++;
+                }
+                var posL=$('.tu-shell').position().left;
+                $('.tu-shell').animate({left:'-'+($('.image-shell').width()+20)*num},500);
+                
+              });
+              $('.left').on('click',function(){
+                 if(num<=0){
+                  num=0;
+                  $('.tu-shell').animate({left:0},500);
+                }else{
+                  num--;
+                  var posL=$('.tu-shell').position().left;
+                  $('.tu-shell').animate({left:posL+$('.image-shell').width()+20},500);
+                }
+                
+                
+              })
+            }
+        }
+    </script>
+</body>
+</html>
