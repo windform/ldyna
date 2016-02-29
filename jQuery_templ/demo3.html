@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在模版中加载远程数据</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/jquery.tmpl.js"></script>
+	<style>
+		.img{
+			width: 100%;
+			height: 200px;
+			background-color: aqua;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row comics">
+
+		</div>
+	</div>
+
+	<script>
+		$ (function(){
+			$.ajax({
+				url:'data/data.json',
+				type:'get',
+				dataType:'json',
+				success:function(data){
+					//id为commics的模版绑定数据comics，插入到.comics的盒子里面
+					$("#comics").tmpl(data.comics).appendTo(".comics")
+				}
+			})
+		});
+	</script>
+	<!-- 创建内敛模版 -->
+	<!--通过id绑定模版名称; 设置特殊的type:text/x-jquery-tmpl来解析模板-->
+	<script id="comics" type="text/x-jquery-tmpl">
+		<div class="col-md-3">
+			<div class="img">${imgSrc}</div>
+			<h3>${title}</h3>
+			<p class="year">Year:${year}</p>
+			<p class="number">Issue Number:${number}</p>
+		</div>
+	</script>
+	
+</body>
+</html>

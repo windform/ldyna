@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板标记</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/jquery.tmpl.js"></script>
+
+	<style>
+		.img{
+			width: 100%;
+			height: 200px;
+			background-color: aqua;
+			font-size: 25px;
+			color: red;
+			text-align: center;
+			line-height: 200px;
+		}
+		ul{
+			margin: 0px;
+			padding: 0px;
+		}
+		.top-color{
+			width: 100%;
+			height: 40px;
+			background-color: #0088cc;
+			text-align: center;
+			line-height: 40px;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row comics">
+
+		</div>
+
+		<div class="row each">
+
+		</div>
+	</div>
+
+	<script>
+		$ (function(){
+			var comics = 
+			[
+				{imgSrc:"coverl.jpg", title:"Captain Templates", year:"2010", number:"1",description:"<stroing>hello</strong>"},
+				{imgSrc:"cover2.jpg", title:"Captain Templates", year:"2011", number:"2",description:"<stroing>nihao</strong>"},
+				{imgSrc:"cover3.jpg", title:"Captain Templates", year:"2013", number:"3",description:"<stroing>konnitiwa</strong>"},
+				{title:"Captain Templates", year:"2014", number:"4",description:"<stroing>aniheseyo</strong>"}
+			]
+			$("#comics").tmpl(comics).appendTo(".comics")
+			/*--------------------------------------------*/
+			var each= 
+			[
+				{imgSrc:"coverl.jpg", title:"Captain Templates", year:"2010", number:"1",themes:['red','blue','orange']},
+				{imgSrc:"cover2.jpg", title:"Captain Templates", year:"2011", number:"2",themes:['green','aqua']},
+				{imgSrc:"cover3.jpg", title:"Captain Templates", year:"2013", number:"3",themes:['maroon']},
+				{imgSrc:"cover4.jpg",title:"Captain Templates", year:"2014", number:"4",themes:['maroon','silver','purple']}
+			]
+			$("#each").tmpl(each).appendTo(".each")
+			/*--------------------------------------------*/
+		});
+	</script>
+
+	<!-- 创建内敛模版 -->
+	<!--通过id绑定模版名称; 设置特殊的type:text/x-jquery-tmpl来解析模板-->
+	<!--{{if}} {{else}} {{/if}}向模板中添加简单逻辑-->
+	<script id="comics" type="text/x-jquery-tmpl">
+		<div class="col-md-3">
+			{{html description}}
+			{{if imgSrc}}
+				<div class="img">${imgSrc}</div>
+			{{else}}
+				<div class="img">default</div>
+			{{/if}}
+
+			<h3>${title}</h3>
+			<p class="year">Year:${year}</p>
+			<p class="number">Issue Number:${number}</p>
+		</div>
+	</script>
+	<!------------------------------------------------------------------------>
+	<!--{{each}}{{/each}}遍历数据对象，注意需要传入的参数,它暴露了两个值$index、$value-->
+	<script id="each" type="text/x-jquery-tmpl">
+		<div class="col-md-3">
+			{{tmpl "#headerTmpl"}}
+			<div class="img">${imgSrc}</div>
+			<h3>${title}</h3>
+			<p class="year"><strong>Year:</strong>${year}</p>
+			<p class="number"><strong>Issue Number:</strong>${number}</p>
+			<ul><strong>themes:</strong>
+				{{each themes}}
+				<li>${$value}(${$index+1})</li>
+				{{/each}}
+			</ul>
+		</div>
+	</script>
+	<!------------------------------------------------------------------------>
+	<!--使用{{tmpl}}嵌套模板-->
+	<script id="headerTmpl" type="text/x-jquery-tmpl">
+			<div class="top-color">${title}</div>
+	</script>
+	<!------------------------------------------------------------------------>
+	<!--使用{{html}}嵌套模板-->
+	<script id="htmlTmpl" type="text/x-jquery-tmpl">
+			<div class="top-color">${title}</div>
+	</script>
+
+
+	
+</body>
+</html>

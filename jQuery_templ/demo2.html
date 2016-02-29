@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>$.template()创建模版</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/jquery.tmpl.js"></script>
+	<style>
+		.img{
+			width: 100%;
+			height: 200px;
+			background-color: aqua;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row comics">
+
+		</div>
+	</div>
+
+	<script>
+		$ (function(){
+			var comics = 
+			[
+				{imgSrc:"coverl.jpg", title:"Captain Templates", year:"2010", number:"1"},
+				{imgSrc:"cover2.jpg", title:"Captain Templates", year:"2011", number:"2"},
+				{imgSrc:"cover3.jpg", title:"Captain Templates", year:"2013", number:"3"},
+				{imgSrc:"cover4.jpg", title:"Captain Templates", year:"2014", number:"4"}
+			]
+			//$.template('模版名称','模版')
+			$.template('comics','<div class="col-md-3"><div class="img">${imgSrc}</div><h3>${title}</h3><p class="year">Year:${year}</p><p class="number">Issue Number:${number}</p></div>');
+			//$.tmpl('需要使用的模版名称','需要绑定的数据')
+			$.tmpl('comics',comics).appendTo('.comics');
+		});
+	</script>
+
+
+
+	
+</body>
+</html>
